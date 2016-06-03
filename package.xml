@@ -1,6 +1,6 @@
 <package>
 
-  <name>lwa4p_movit_config</name>
+  <name>lwa4p_moveit_config</name>
   <version>0.2.0</version>
   <description>
      An automatically generated package with all the configuration and launch files for using the lwa4p with the MoveIt Motion Planning Framework
@@ -25,5 +25,5 @@
 
 
   <buildtool_depend>catkin</buildtool_depend>
-  
+
 </package>
