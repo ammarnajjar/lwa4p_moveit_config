@@ -10,7 +10,7 @@
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
     <group name="manipulator">
-        <chain base_link="arm_podest_link" tip_link="arm_6_link" />
+        <chain base_link="arm_base_link" tip_link="arm_6_link" />
     </group>
     <group name="gripper">
         <link name="arm_6_link" />
@@ -27,7 +27,7 @@
     <group_state name="active" group="manipulator">
         <joint name="arm_1_joint" value="0" />
         <joint name="arm_2_joint" value="-0.25" />
-        <joint name="arm_3_joint" value="1.30" />
+        <joint name="arm_3_joint" value="1.3" />
         <joint name="arm_4_joint" value="0" />
         <joint name="arm_5_joint" value="0.9" />
         <joint name="arm_6_joint" value="0" />
@@ -35,7 +35,7 @@
     <group_state name="pos1" group="manipulator">
         <joint name="arm_1_joint" value="-0.25" />
         <joint name="arm_2_joint" value="-0.94" />
-        <joint name="arm_3_joint" value="1.30" />
+        <joint name="arm_3_joint" value="1.3" />
         <joint name="arm_4_joint" value="0" />
         <joint name="arm_5_joint" value="0.7" />
         <joint name="arm_6_joint" value="0" />
@@ -51,7 +51,7 @@
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="gripper" parent_link="arm_6_link" group="gripper" parent_group="manipulator" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
-    <virtual_joint name="FixedBase" type="fixed" parent_frame="world" child_link="arm_podest_link" />
+    <virtual_joint name="arm_base_link" type="fixed" parent_frame="arm_podest_link" child_link="arm_1_link" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="arm_1_link" link2="arm_2_link" reason="Adjacent" />
     <disable_collisions link1="arm_1_link" link2="arm_3_link" reason="Never" />
